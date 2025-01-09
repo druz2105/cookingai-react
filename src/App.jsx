@@ -26,7 +26,6 @@ function App() {
         e.preventDefault();
         setLoader(true);
         const response = await callApi(input);
-        console.log(response, "response>>>>>>>>>>>>");
         if (input.trim()) {
             // Simulate AI response
             const commonResponse = `AI: Here is the response to '${input}'`;
@@ -40,12 +39,22 @@ function App() {
         <div className="bg-gradient-to-br from-yellow-50 to-orange-100 min-h-screen flex flex-col items-center p-4">
             <header className="bg-orange-500 text-white w-full py-6 text-center shadow-lg">
                 <h1 className="text-4xl font-bold">Cooking & Restaurant AI</h1>
-                <p className="text-lg italic">Your personal chef and dining assistant</p>
             </header>
 
             <main className="flex-grow w-full max-w-3xl mt-6">
                 <div className="bg-white shadow-xl rounded-2xl p-8">
-                    <h2 className="text-2xl font-semibold mb-6 text-orange-600 text-center">Ask me about recipes, cooking tips, or restaurant suggestions!</h2>
+                    <h2 className="text-2xl font-semibold mb-6 text-orange-600 text-center">Ask me about ingredients and recipies across the world!</h2>
+
+                    <div className="bg-yellow-50 p-4 rounded-lg shadow-md">
+                        <p className="text-gray-700 mb-2 font-medium">Example Questions:</p>
+                        <ul className="list-disc list-inside text-gray-600">
+                        <li>Recipe of blueberry cheesecake</li>
+                        <li>Ingredients for Alfredo pasta</li>
+                        <li>Recipe for vegan brownies?</li>
+                        <li>Note: I only give answer about recipes and ingredients.</li>
+                        </ul>
+                    </div>
+
 
                     <div className="space-y-6 mb-8">
                         {responses.map((response, index) => (
@@ -83,7 +92,7 @@ function App() {
             </main>
 
             <footer className="w-full text-center py-6 mt-6 text-gray-600 text-sm">
-                &copy; 2024 Cooking & Restaurant AI. Bon Appétit!
+                &copy; 2024 Cooking AI. Bon Appétit!
             </footer>
         </div>
     );
