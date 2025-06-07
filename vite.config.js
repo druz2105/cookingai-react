@@ -14,6 +14,7 @@ export default defineConfig({
     strictPort: true,
     host: true,
     origin: "http://0.0.0.0:8080",
+    allowedHosts: ['cookingai-react.fly.dev'], // 👈 Add this line
   },
   css: {
     postcss: {
